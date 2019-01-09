@@ -54,9 +54,7 @@ public class DeptController {
             if(!StringUtils.isEmpty(id)){
                 this.departmentService.del(id);
                 List<Department> departments = departmentService.getAll();
-                if(!CollectionUtils.isEmpty(departments)){
-                    request.getSession().setAttribute("departments",departments);
-                }
+                request.getSession().setAttribute("departments",departments);
             }else{
                 throw new AppException("id 获取失败");
             }
